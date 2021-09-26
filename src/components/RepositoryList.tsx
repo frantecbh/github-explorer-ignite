@@ -5,15 +5,15 @@ import { useState, useEffect } from "react";
 
 //https://api.github.com/users/frantecbh/repos
 
-const repository ={
-    name: 'unform',
-    description: 'Forms in React',
-    link: 'https://github.com/frantecbh'
+interface Repository {
+    name: string;
+    description: string;
+    html_url: string;
 }
 
 export function RepositoryList(){
 
-    const [repositories, setRepostories] = useState([])
+    const [repositories, setRepostories] = useState<Repository[]>([])
 
     useEffect(()=>{
 
